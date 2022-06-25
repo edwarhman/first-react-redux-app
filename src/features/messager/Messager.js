@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addMessage, messageReducer } from "./MessagerReducer";
+import { addMessage } from "./messagerSlice";
 
 class Presentational extends React.Component {
     constructor(props) {
@@ -47,10 +47,9 @@ class Presentational extends React.Component {
 }
 
 // React Redux 
-//
 
 const mapStateToProps = (state) => {
-    return {messages: state};
+    return {messages: state.messager.messages};
 }
 
 const mapDispatchToProps = (dispatch) => {
